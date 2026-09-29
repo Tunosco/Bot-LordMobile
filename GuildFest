@@ -1,0 +1,98 @@
+import pyautogui
+import time
+import random as rd
+
+def supQuest():
+    pyautogui.moveTo(pyautogui.locateCenterOnScreen('Bin.png', confidence=0.8))
+    pyautogui.click()
+    time.sleep(rd.uniform(0.1,0.5))
+    pyautogui.moveTo(pyautogui.locateCenterOnScreen('Oui.png', confidence=0.8))
+    pyautogui.click()
+    time.sleep(rd.uniform(0.1,0.5))
+
+def verif():
+    try:
+        elif pyautogui.locateOnScreen('4.png', confidence=0.95) is not None:
+            pyautogui.moveTo(pyautogui.locateCenterOnScreen('4.png', confidence=0.95))
+            pyautogui.click()
+            time.sleep(rd.uniform(0.1,0.5))
+            supQuest()
+        if pyautogui.locateOnScreen('5.png', confidence=0.95) is not None:
+            pyautogui.moveTo(pyautogui.locateCenterOnScreen('5.png', confidence=0.95))
+            pyautogui.click()
+            time.sleep(rd.uniform(0.1,0.5))
+            supQuest()
+        elif pyautogui.locateOnScreen('6.png', confidence=0.95) is not None:
+            pyautogui.moveTo(pyautogui.locateCenterOnScreen('6.png', confidence=0.95))
+            pyautogui.click()
+            time.sleep(rd.uniform(0.1,0.5))
+            supQuest()
+        elif pyautogui.locateOnScreen('7.png', confidence=0.95) is not None:
+            pyautogui.moveTo(pyautogui.locateCenterOnScreen('7.png', confidence=0.95))
+            pyautogui.click()
+            time.sleep(rd.uniform(0.1,0.5))
+            supQuest()
+        elif pyautogui.locateOnScreen('8.png', confidence=0.95) is not None:
+            pyautogui.moveTo(pyautogui.locateCenterOnScreen('8.png', confidence=0.95))
+            pyautogui.click()
+            time.sleep(rd.uniform(0.1,0.5))
+            supQuest()
+        elif pyautogui.locateOnScreen('9.png', confidence=0.95) is not None:
+            pyautogui.moveTo(pyautogui.locateCenterOnScreen('9.png', confidence=0.95))
+            pyautogui.click()
+            time.sleep(rd.uniform(0.1,0.5))
+            supQuest()
+        elif pyautogui.locateOnScreen('10.png', confidence=0.95) is not None:
+            pyautogui.moveTo(pyautogui.locateCenterOnScreen('10.png', confidence=0.95))
+            pyautogui.click()
+            time.sleep(rd.uniform(0.1,0.5))
+            supQuest()
+        elif pyautogui.locateOnScreen('11.png', confidence=0.95) is not None:
+            pyautogui.moveTo(pyautogui.locateCenterOnScreen('11.png', confidence=0.95))
+            pyautogui.click()
+            time.sleep(rd.uniform(0.1,0.5))
+            supQuest()
+        elif pyautogui.locateOnScreen('12.png', confidence=0.95) is not None:
+            pyautogui.moveTo(pyautogui.locateCenterOnScreen('12.png', confidence=0.95))
+            pyautogui.click()
+            time.sleep(rd.uniform(0.1,0.5))
+            supQuest()
+        elif pyautogui.locateOnScreen('13.png', confidence=0.95) is not None:
+            pyautogui.moveTo(pyautogui.locateCenterOnScreen('13.png', confidence=0.95))
+            pyautogui.click()
+            time.sleep(rd.uniform(0.1,0.5))
+            supQuest()
+
+def down():
+    pyautogui.moveTo(rd.randint(140,1200),rd.randint(500,1000))
+    pyautogui.drag(0,-195,1)
+    time.sleep(rd.uniform(1,1.2))
+
+def up():
+    for i in range(3):
+        pyautogui.moveTo(rd.randint(140,1200),rd.randint(450,700))
+        pyautogui.drag(0,400,0.5)
+        time.sleep(rd.uniform(0.1,0.5))
+
+def reset():
+    pyautogui.moveTo(pyautogui.locateCenterOnScreen('Aucune.png', confidence=0.8))
+    pyautogui.click()
+    time.sleep(rd.uniform(0.1,0.5))
+
+def GF():
+    while True:
+        for i in range(3):
+            verif()
+            time.sleep(rd.uniform(0.1,0.5))
+        down()
+        for i in range(4):
+            for j in range(4):
+                verif()
+                time.sleep(rd.uniform(0.1,0.5))
+            down()
+        verif()
+        time.sleep(rd.uniform(0.1,0.5))
+        up()
+        time.sleep(rd.uniform(0.1,0.5))
+time.sleep(2)
+GF()
