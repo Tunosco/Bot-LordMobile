@@ -1,0 +1,86 @@
+import pyautogui
+import time
+import random as rd
+import win32api, win32con
+
+#https://www.youtube.com/watch?v=YRAIUA-Oc1Y
+#https://www.youtube.com/watch?v=wCho_BdpdyY&t=187s
+#https://github.com/KianBrose/Image-Recognition-Botting-Tutorial/blob/master/aimbooster.py
+
+#Text on screen : https://www.youtube.com/watch?v=oyqNdcbKhew
+
+def EnterCo(x:str):
+    if x=='1':
+        pyautogui.moveTo(pyautogui.locateCenterOnScreen('1.png', confidence=0.8))#met le curseur sur 1
+        pyautogui.click()#clique sur 1
+    elif x=='2':
+        pyautogui.moveTo(pyautogui.locateCenterOnScreen('2.png', confidence=0.8))#met le curseur sur 2
+        pyautogui.click()#clique sur 2 
+    elif x=='3':
+        pyautogui.moveTo(pyautogui.locateCenterOnScreen('3.png', confidence=0.8))#met le curseur sur 3
+        pyautogui.click()#clique sur 3
+    elif x=='4':
+        pyautogui.moveTo(pyautogui.locateCenterOnScreen('4.png', confidence=0.8))#met le curseur sur 4
+        pyautogui.click()#clique sur 4
+    elif x=='5':
+        pyautogui.moveTo(pyautogui.locateCenterOnScreen('5.png', confidence=0.8))#met le curseur sur 5
+        pyautogui.click()#clique sur 5
+    elif x=='6':
+        pyautogui.moveTo(pyautogui.locateCenterOnScreen('6.png', confidence=0.8))#met le curseur sur 6
+        pyautogui.click()#clique sur 6
+    elif x=='7':
+        pyautogui.moveTo(pyautogui.locateCenterOnScreen('7.png', confidence=0.8))#met le curseur sur 7
+        pyautogui.click()#clique sur 7
+    elif x=='8':
+        pyautogui.moveTo(pyautogui.locateCenterOnScreen('8.png', confidence=0.8))#met le curseur sur 8
+        pyautogui.click()#clique sur 8
+    elif x=='9':
+        pyautogui.moveTo(pyautogui.locateCenterOnScreen('9.png', confidence=0.8))#met le curseur sur 9
+        pyautogui.click()#clique sur 9
+    elif x=='0':
+        pyautogui.moveTo(pyautogui.locateCenterOnScreen('0.png', confidence=0.8))#met le curseur sur 0
+        pyautogui.click()#clique sur 0
+
+def move(letter:str,x:int):
+    tab=[chiffre for chiffre in str(x)]
+    pyautogui.moveTo(pyautogui.locateCenterOnScreen('Loupe.png', confidence=0.8))#met le curseur sur la loupe
+    pyautogui.click() #clique sur la loupe pour rechercher un territoire
+    time.sleep(rd.uniform(0.1,0.5))
+    if letter == 'x':
+        pyautogui.moveTo(937,400)#place le curseur sur la valeur de X
+        pyautogui.click() #clique sur la valeur de X
+        time.sleep(rd.uniform(0.1,0.5))
+        for i in tab:
+            EnterCo(i)# Saisi les coordonnées de X
+            time.sleep(rd.uniform(0.1,0.5))
+    elif letter == 'y':
+        pyautogui.moveTo(1100,400)  #place le curseur sur la valeur de Y
+        pyautogui.click()   #clique sur la valeur de Y
+        time.sleep(rd.uniform(0.1,0.5))
+        for i in tab:
+            EnterCo(i)  #Saisi les coordonnées de Y
+            time.sleep(rd.uniform(0.1,0.5))
+    pyautogui.moveTo(pyautogui.locateCenterOnScreen('Valid.png', confidence=0.8))#met le curseur sur "Valider"
+    pyautogui.click()   #clique sur "Valider"
+    time.sleep(rd.uniform(0.1,0.5))
+    pyautogui.moveTo(937,550)#met le curseur sur "OK"
+    pyautogui.click()   #clique sur "OK"
+    time.sleep(rd.uniform(0.1,0.5))
+
+def searchCastle(name):
+    for i in range (3,1023,10): #2.1 browse every lines of the map
+        move('x',i)                                                                                 #Parcours la ligne
+        for j in range (5,510,10):  #2.2 browse every colums of the map
+            move('y',j)                                                                             #Parcours la colonne
+            if :   #3 check if there is the wanted castle on the screen                             #Si il y a le chateau
+                pyautogui.moveTo(pyautogui.center())                                                #Me te curseur sur le nom du chateau
+                pyautogui.click()                                                                   #Clique sur le chateau
+                time.sleep(rd.uniform(0.1,0.5))
+                pyautogui.moveTo(pyautogui.locateCenterOnScreen('Partager.png', confidence=0.8))    #Met le curseur sur "Partager"
+                pyautogui.click()                                                                   #Clique sur le "Partager"
+                time.sleep(rd.uniform(0.1,0.5))
+                pyautogui.moveTo(pyautogui.locateCenterOnScreen('Envoyer.png', confidence=0.8))     #Met le curseur sur "Envoyer"
+                pyautogui.click()                                                                   #Envoie les coordonnées du chateau
+                time.sleep(rd.uniform(0.1,0.5))                
+
+time.sleep(2)
